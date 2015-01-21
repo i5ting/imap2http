@@ -18,3 +18,9 @@ send mail
 
 	npm run send
 	
+
+
+## Resources
+
+- https://github.com/andris9/Nodemailer
+- https://github.com/mscdex/node-imap
