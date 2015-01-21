@@ -18,9 +18,28 @@ send mail
 
 	npm run send
 	
+get mail 
 
+	npm run get
+
+send && get mail
+
+	npm run gs
+
+get unseen mail
+
+	npm run unseen
+
+send && get unseen mail
+
+	npm run unseen2
 
 ## Resources
 
 - https://github.com/andris9/Nodemailer
 - https://github.com/mscdex/node-imap
+- https://github.com/chirag04/mail-listener2
+- https://github.com/hiddentao/browsermail
+- https://github.com/tualo/tualo-imap
+
+http://mobile.emoze.com/android/Emoze-Android-User-Guide.pdf

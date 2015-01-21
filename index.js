@@ -4,6 +4,7 @@ var Imap = require('imap'),
 var config = require('./config.json')
 
 var imap = new Imap(config);
+ 
 
 function openInbox(cb) {
   imap.openBox('INBOX', true, cb);
@@ -13,15 +14,20 @@ imap.once('ready', function() {
   openInbox(function(err, box) {
     if (err) throw err;
 		// var f = imap.seq.fetch(box.messages.total + ':*', { bodies: ['HEADER.FIELDS (FROM)','TEXT'] });
-    // var f = imap.seq.fetch('163:1740', {
-   //    bodies: 'HEADER.FIELDS (FROM)',
-   //    struct: false
-   //  });
+    var f = imap.seq.fetch('163:1740', {
+      bodies: 'HEADER.FIELDS (FROM)',
+      struct: true
+    });
 		
-		console.log(box.messages.total)
+		var folder =  box.messages
+	  console.log("收件箱中共" + folder.total + "封邮件!");
+		console.log("收件箱中共" + folder.new + "封未读邮件!");
+		console.log("收件箱中共" + folder.unseen + "封新邮件!");
+		// console.log("收件箱中共" + folder.getDeletedMessageCount() + "封已删除邮件!");
+
 		// f = imap.seq.fetch(box.messages.total + ':*', { bodies: ['HEADER.FIELDS (FROM)','TEXT'] });
 		
-		return;
+		// return;
     f.on('message', function(msg, seqno) {
       console.log('Message #%d', seqno);
       var prefix = '(#' + seqno + ') ';

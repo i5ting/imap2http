@@ -30,3 +30,6 @@ node_modules
 # for build
 config.json
 config.send.json
+
+
+*.txt

@@ -4,7 +4,11 @@
   "private": false,
   "scripts": {
     "start": "supervisor ./bin/www",
-		"send":"node sendmail.js"
+		"send":"node sendmail.js",
+		"get":"node index.js",
+		"gs":"npm run send && npm run get",
+		"unseen":" node src/unseen.js",
+		"unseen2":" npm run send && npm run unseen"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
