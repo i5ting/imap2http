@@ -13,13 +13,15 @@ imap.once('ready', function() {
   openInbox(function(err, box) {
     if (err) throw err;
 		// var f = imap.seq.fetch(box.messages.total + ':*', { bodies: ['HEADER.FIELDS (FROM)','TEXT'] });
-    var f = imap.seq.fetch('173:1740', {
-      bodies: 'HEADER.FIELDS (FROM)',
-      struct: false
-    });
+    // var f = imap.seq.fetch('163:1740', {
+   //    bodies: 'HEADER.FIELDS (FROM)',
+   //    struct: false
+   //  });
 		
-		f = imap.seq.fetch(box.messages.total + ':*', { bodies: ['HEADER.FIELDS (FROM)','TEXT'] });
+		console.log(box.messages.total)
+		// f = imap.seq.fetch(box.messages.total + ':*', { bodies: ['HEADER.FIELDS (FROM)','TEXT'] });
 		
+		return;
     f.on('message', function(msg, seqno) {
       console.log('Message #%d', seqno);
       var prefix = '(#' + seqno + ') ';
