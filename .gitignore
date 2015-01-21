@@ -28,7 +28,4 @@ node_modules
 .lock-wscript
 
 # for build
-build/**
-test/.gi*
-
 config.json
