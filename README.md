@@ -11,3 +11,10 @@
 	- 收件箱中共" + folder.getNewMessageCount() + "封新邮件!"
 	- 收件箱中共" + folder.getDeletedMessageCount() + "封已删除邮件!"
 - 获取未读邮件
+
+## Usage
+
+send mail 
+
+	npm run send
+	

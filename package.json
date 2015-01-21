@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "start": "supervisor ./bin/www"
+    "start": "supervisor ./bin/www",
+		"send":"node sendmail.js"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
